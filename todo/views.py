@@ -62,7 +62,7 @@ def currenttodos(request):
 @login_required  # Проверяет зарегистрирован ли пользователь перед доступом к функции
 def completedtodos(request):
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=False).order_by('-datecompleted')
-    return render(request, "todo/compleetedtodos.html", {'todos': todos})
+    return render(request, "todo/completedtodos.html", {'todos': todos})
 
 
 @login_required
